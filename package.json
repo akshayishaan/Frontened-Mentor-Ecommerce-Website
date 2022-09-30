@@ -1,0 +1,17 @@
+{
+  "name": "ecommerce-product-page-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  }
+}

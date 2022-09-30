@@ -1,0 +1,77 @@
+.visual-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+
+  @include respond(phone) {
+    display: none;
+  }
+
+  button {
+    display: flex;
+  }
+
+  &__box {
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @include respond(tab-land) {
+      width: 40%;
+    }
+
+    @include respond(tab-port) {
+      width: 50%;
+    }
+  }
+
+  &__selected {
+    position: relative;
+  }
+
+  &__photo {
+    cursor: default;
+  }
+
+  &__thumbnails {
+    padding: 0 3.2rem;
+  }
+
+  &__thumbnail-box {
+    background-color: var(--color-white);
+  }
+
+  &__prev-btn {
+    left: -2.5rem;
+  }
+
+  &__next-btn {
+    right: -2.5rem;
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: 0;
+    top: -3rem;
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-white);
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      fill: var(--color-primary);
+    }
+  }
+}
+
+.animate-overlay {
+  transform: scale(1);
+  backdrop-filter: brightness(0.2) blur(10px);
+}

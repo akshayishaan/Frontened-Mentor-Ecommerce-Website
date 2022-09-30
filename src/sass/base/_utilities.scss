@@ -1,0 +1,21 @@
+.container {
+  max-width: 125rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+
+  @include respond(phone) {
+    padding: 0 1.6rem;
+  }
+}
+
+.secondary-heading {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  @include respond(tab-port) {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,188 @@
+.nav {
+  font-size: 1.6rem;
+  color: var(--color-black);
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  border-bottom: 2px solid var(--color-light-grayish-blue);
+  position: relative;
+  backface-visibility: hidden;
+
+  @include respond(tab-land) {
+    height: 9rem;
+  }
+
+  @include respond(tab-port) {
+    height: 8.5rem;
+  }
+
+  @include respond(phone) {
+    height: 8rem;
+    gap: 1.6rem;
+  }
+
+  // ! Just an overlay and it's not the child of <nav>,  I just wanted a a backdrop filter in whole viewport
+  &__overlay {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    backdrop-filter: brightness(0.2) blur(1px);
+    animation: opacityEffect 0.3s;
+  }
+
+  &__hamburger-menu {
+    cursor: pointer;
+    display: none;
+    z-index: 5000;
+
+    @include respond(tab-port) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__hamburger-icon {
+    width: 2rem;
+    height: 2rem;
+
+    @include respond(phone) {
+      height: 1.5rem;
+      width: 2rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(phone) {
+      margin-left: -1.5rem;
+    }
+  }
+
+  &__logo-photo {
+    display: inline-block;
+    width: 100%;
+
+    @include respond(phone) {
+      width: 80%;
+    }
+  }
+
+  &__list {
+    color: var(--color-dark-grayish-blue);
+    display: flex;
+    list-style: none;
+    gap: 2.4rem;
+    align-items: center;
+    height: 100%;
+
+    @include respond(tab-port) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 65vw;
+      transform-origin: left;
+      transform: translateX(-120%);
+      height: 100vh;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding: 10rem 3rem;
+      background-color: var(--color-white);
+      color: var(--color-black);
+      z-index: 100;
+      transition: all 0.5s;
+    }
+  }
+
+  &__item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 3px;
+      background-color: var(--color-primary);
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.5s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    @include respond(tab-port) {
+      height: auto;
+    }
+  }
+
+  &__item-link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: inherit !important;
+
+      @include respond(tab-port) {
+        font-weight: 600;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: var(--color-black);
+    }
+  }
+
+  &__cart {
+    margin-left: auto;
+    border: none;
+    background-color: inherit;
+
+    &-logo {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: var(--color-dark-grayish-blue);
+      cursor: pointer;
+    }
+  }
+
+  &__profile {
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    background-color: inherit;
+  }
+
+  &__profile-photo {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.5s;
+    &:hover {
+      border: 2px solid var(--color-primary);
+    }
+  }
+}
+
+.nav--active {
+  transform: translateX(0);
+}
+
+.display--overlay {
+  display: block;
+}
