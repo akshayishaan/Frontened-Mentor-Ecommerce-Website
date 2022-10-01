@@ -15,8 +15,20 @@ const toggleCart = function (cart) {
   cart.classList.toggle('hidden');
 };
 
+const loadImage = function (item) {
+  visualsView.renderSpinner();
+  setTimeout(function () {
+    const imgEl = model.findImage(item);
+    const imgBox = document.querySelector('.product__image-box');
+    imgBox.innerHTML = '';
+    imgBox.insertAdjacentElement('afterbegin', imgEl);
+  }, 500);
+};
+
 // Adds Required Event Listeners
 const init = function () {
+  loadImage(1);
+  visualsView.addThumbnailHandler(loadImage);
   navigationView.addHandler(toggleNav, toggleCart);
 };
 

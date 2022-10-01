@@ -6,3 +6,13 @@
     backdrop-filter: brightness(0.2) blur(1px);
   }
 }
+
+@keyframes rotateSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

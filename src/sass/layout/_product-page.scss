@@ -88,6 +88,19 @@
     }
   }
 
+  &__image-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__spinner-img {
+    display: block;
+    width: 25%;
+    // margin: 20rem 0;
+    animation: rotateSpinner 1.5s infinite;
+  }
+
   &__photo {
     width: 100%;
     display: inline-block;
