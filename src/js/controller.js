@@ -2,6 +2,7 @@
 import navigationView from './views/navigationView';
 import visualsView from './views/visualsView';
 import visualOverlayView from './views/visualOverlayView';
+import cartView from './views/cartView';
 import * as model from './model';
 
 //? Variables
@@ -59,6 +60,11 @@ const controlVisualButtons = function (prevBtn) {
   }
 };
 
+const controlItemsInCart = function () {
+  const added = cartView.addItemsToCart(model.state.currItemsInCart);
+  model.state.currItemsInCart += added;
+};
+
 // Adds Required Event Listeners
 const init = function () {
   loadImage(1);
@@ -67,6 +73,8 @@ const init = function () {
   visualOverlayView.addOverlayHandler();
   visualOverlayView.addVisualButtonHandler(controlVisualButtons);
   visualOverlayView.addVisualCloseButtonHandler();
+  cartView.addCounterHandler();
+  cartView.addAddToCartHandler(controlItemsInCart);
 };
 
 init();

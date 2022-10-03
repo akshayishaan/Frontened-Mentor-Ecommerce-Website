@@ -279,11 +279,11 @@
   }
 
   &__qty-counter-box {
-    flex-grow: 1;
+    flex-basis: 35%;
   }
 
   &__add-to-cart {
-    flex-grow: 2;
+    flex-basis: 60%;
 
     font-size: 1.8rem;
     font-weight: 600;

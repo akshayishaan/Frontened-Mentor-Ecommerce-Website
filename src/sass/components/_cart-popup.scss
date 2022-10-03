@@ -103,6 +103,10 @@
     border-radius: 1rem;
     cursor: pointer;
   }
+
+  &__checkout[data-qty='0'] {
+    display: none;
+  }
 }
 
 .hidden {

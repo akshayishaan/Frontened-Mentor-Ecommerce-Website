@@ -40,10 +40,9 @@
         <h1 class="cart-popup__heading">Cart</h1>
 
         <div class="cart-popup__content">
-          <p class="cart-popup__msg">Your cart is empty!</p>
-          <!-- <div class="cart-popup__items">
-
-            <div class="cart-popup__item">
+          <div class="cart-popup__items">
+            <p class="cart-popup__msg">Your cart is empty!</p>
+            <!-- <div class="cart-popup__item">
 
               <div class="cart-popup__item-photo">
                 <img src="./images/image-product-1-thumbnail.jpg" alt="Product Photo">
@@ -61,10 +60,10 @@
                 <use xlink:href="./images/sprite.svg#icon-delete"></use>
               </svg>
 
-            </div>
+            </div> -->
 
           </div>
-          <button class="cart-popup__checkout">Checkout</button> -->
+          <button class="cart-popup__checkout" data-qty="0">Checkout</button>
         </div>
       </div>
     </div>
@@ -131,13 +130,13 @@
       </div>
       <div class="product__actions">
         <div class="counter product__qty-counter-box">
-          <button class="product__icon">
+          <button class="product__icon product__icon-minus">
             <svg class="product__counter-handler">
               <use xlink:href="./images/sprite.svg#icon-minus"></use>
             </svg>
           </button>
           <span class="product__counter">0</span>
-          <button class="product__icon">
+          <button class="product__icon product__icon-plus">
             <svg class="product__counter-handler">
               <use xlink:href="./images/sprite.svg#icon-plus"></use>
             </svg>

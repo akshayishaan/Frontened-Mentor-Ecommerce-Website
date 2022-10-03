@@ -1,5 +1,6 @@
 export const state = {
   currSelected: 1,
+  currItemsInCart: 0,
 };
 
 export const findImage = function (item) {
