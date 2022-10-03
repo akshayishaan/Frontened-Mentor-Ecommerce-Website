@@ -163,7 +163,10 @@
               <use xlink:href="./images/sprite.svg#icon-previous"></use>
             </svg>
           </button>
-          <img src="./images/image-product-1.jpg" alt="Current Selected View" class="product__photo">
+          <div class="product__image-box visual-overlay__image-box">
+            <img src="./images/image-product-1.jpg" alt="Current Selected View"
+              class="product__photo visual-overlay__photo">
+          </div>
           <button class="product__selected-btn product__next-btn visual-overlay__next-btn">
             <svg>
               <use xlink:href="./images/sprite.svg#icon-next"></use>
@@ -173,19 +176,23 @@
 
         <div class="product__thumbnails visual-overlay__thumbnails">
           <div class="product__thumbnail-box visual-overlay__thumbnail-box product__thumbnail--active">
-            <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail"
+              data-img-source="1">
           </div>
 
           <div class="product__thumbnail-box visual-overlay__thumbnail-box">
-            <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail"
+              data-img-source="2">
           </div>
 
           <div class="product__thumbnail-box visual-overlay__thumbnail-box">
-            <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail"
+              data-img-source="3">
           </div>
 
           <div class="product__thumbnail-box visual-overlay__thumbnail-box">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail" class="product__thumbnail"
+              data-img-source="4">
           </div>
         </div>
       </div>

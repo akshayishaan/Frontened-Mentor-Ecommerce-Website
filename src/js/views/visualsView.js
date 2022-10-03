@@ -1,25 +1,20 @@
 import icons from '../../../images/sprite.svg';
 
 class VisualsView {
-  #visuals = document.querySelector('.product__visuals');
-  #thumbnails = document.querySelector('.product__thumbnails');
+  #thumbnails = document.querySelectorAll('.product__thumbnails');
   #imgBox = document.querySelector('.product__image-box');
   constructor() {}
 
   addThumbnailHandler(loadImage) {
-    this.#thumbnails.addEventListener('click', function (e) {
-      const box = e.target.closest('.product__thumbnail-box');
-      if (!box) return;
-      const thumbnails = this.children;
-      [...thumbnails].forEach(thumbnail => {
-        thumbnail.classList.remove('product__thumbnail--active');
+    this.#thumbnails.forEach(el => {
+      el.addEventListener('click', function (e) {
+        const box = e.target.closest('.product__thumbnail-box');
+        if (!box) return;
+
+        const item = e.target.dataset.imgSource;
+        if (!item) return;
+        loadImage(+item);
       });
-
-      box.classList.add('product__thumbnail--active');
-
-      const item = e.target.dataset.imgSource;
-      if (!item) return;
-      loadImage(+item);
     });
   }
 
